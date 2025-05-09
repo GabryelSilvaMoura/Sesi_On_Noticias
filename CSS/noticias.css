@@ -85,7 +85,7 @@ header > a > i{
     position: relative;
     margin-bottom: 50px;
 
-    background-image: url("./Imagens/fundo.jpg");
+    background-image: url("../Imagens/fundo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
