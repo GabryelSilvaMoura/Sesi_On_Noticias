@@ -1,0 +1,396 @@
+/* Variaveis */
+:root{
+    /* Tamanho Fontes */
+    --titulo: 2em;
+    --subtitulo: 1.2em;
+    --texto: 1.1em;
+
+    --fonte: "Poppins", sans-serif;
+}
+
+/* Configurações Gerais */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    font-family: var(--fonte);
+}
+
+/* Barra de Scrollar */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+background: #646464;
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: yellow;
+border-radius: 20px;
+border: 1px solid yellow;
+}
+
+/* Botão Dia/Noite */
+.mud{
+	height: 50px;
+    width: 50px;
+	background-color: orange;
+    border: transparent;
+	border-radius: 50%;
+}
+
+.mud > i{
+    font-size: var(--titulo);
+    color: white;
+	font-weight: 300;
+}
+
+.mud:hover{
+    background-color: orangered;
+}
+
+/* Cabeçalho */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #535353;
+    border-bottom: 2px solid yellow;
+}
+
+header > h1{
+    font-size: var(--titulo);
+    color: white;
+}
+
+header > a{
+    text-decoration: none;
+}
+
+header > a > i{
+    color: white;
+    font-size: var(--titulo);
+}
+
+/* Banner 1 */
+.fundo{
+    width: 100%;
+    height: 32rem;
+    position: relative;
+    margin-bottom: 50px;
+
+    background-image: url("/Noticias/Imagens/fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+section.fundo::after{
+    content: "";
+    inset: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.603);
+}
+
+.txt-fundo{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    z-index: 1;
+}
+
+.txt-fundo h1{
+    font-size: 100px;
+    color: white;
+    animation: left-txt 1s forwards;
+}
+
+.txt-fundo h1> span{
+    color: yellow;
+} 
+
+.txt-fundo h2{
+    font-size: 30px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    font-weight: 400;
+    animation: left-txt 1s forwards;
+    animation-delay: 50ms;
+    border-bottom: 2px solid white;
+}
+
+@keyframes left-txt{
+    to{
+        transform: translate(0);
+        opacity: 1;
+    }
+    from{
+        transform: translate(-100px);
+        opacity: 0;
+    }
+}
+
+/* Conteúdo Principal */
+main{
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+
+/* Sessão Barra Lateral */
+main > #lat{
+    width: 30%;
+    height: auto;
+    border-right: 2px solid black;
+    
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+main > #lat > #tab{
+	display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+
+	position: sticky;
+	top: 0%;
+    width: 90%;
+   
+}
+
+main > #lat > #tab > #series{
+    width: 90%;
+}
+
+main > #lat > #tab > #series > a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+main > #lat > #tab > #series > a > li{
+    list-style-type: none;
+    padding-left: 20px;
+    height: 50px;
+    border: 2px solid black;
+    margin: 10px 0px;
+    background-color: rgba(255, 68, 0, 0.411);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+main > #lat > #tab > #series > a > li::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 68, 0, 0.726);
+    width: 0;
+    height: 100%;
+    transition: all 0.3s ease-out;
+    z-index: -1;
+}
+
+main > #lat > #tab > #series > a > li:hover::after{
+    width: 100%;
+}
+
+main > #lat > #tab > #anos{
+    width: 90%;
+}
+
+main > #lat > #tab > #anos > a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+main > #lat > #tab > #anos > a > li{
+    list-style-type: none;
+    border: 2px solid black;
+    height: 50px;
+    padding-left: 20px;
+    background-color: rgba(255, 166, 0, 0.452);
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+main > #lat > #tab > #anos > a > li::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 166, 0, 0.596);
+    width: 0;
+    height: 100%;
+    transition: all 0.3s ease-out;
+    z-index: -1;
+}
+
+main > #lat > #tab > #anos > a > li:hover::after{
+    width: 100%;
+}
+
+/* Sessão Artigos */
+main > #not{
+    width: 70%;
+    margin: 20px 0px;
+}
+
+main > #not > h2{
+    text-align: center;
+    font-size: var(--titulo);
+}
+
+main > #not > .ficha{
+    width: 50rem;
+    margin: 30px auto;
+    border: 2px solid #b3b3b3;
+    transition: all 0.3s ease-in;
+}
+
+main > #not > .ficha:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.362);
+}
+
+main > #not > .ficha > .escopo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b3b3b3;
+    padding: 0px 25px;
+    border-bottom: 2px solid black;
+}
+
+main > #not > .ficha > .escopo > h4{
+    background-color: transparent;
+}
+
+main > #not > .ficha > .escopo > div{
+    padding: 10px 0px;
+}
+
+main > #not > .ficha > .escopo > div > h2{
+    color: black;
+}
+
+main > #not > .ficha > .escopo > div > h3{
+    font-weight: 200;
+}
+
+main > #not > .ficha > .txt{
+    display: flex;
+    align-items: center;
+    text-align: justify;
+}
+
+main > #not > .ficha > .txt > img{
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+    object-fit: cover;
+    transition: 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+main > #not > .ficha > .txt > img:hover{
+    object-fit: contain;
+    transform: scale(1.05);
+    opacity: 0.8; 
+}
+
+main > #not > .ficha > .txt > p{
+    padding: 10px 20px;
+}
+
+/* Rodapé */
+footer{
+    background-color: #333;
+    padding: 20px 0px;
+}
+
+footer > p{
+    text-align: center;
+    color: white;
+    padding: 10px 0px;
+}
+
+footer > section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+footer > section > div{
+    width: 350px;
+    margin: 15px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    text-align: center;
+}
+
+footer > section > div > img{
+    height: 60px;
+}
+
+footer > section > div > h3{
+    color: white;
+    border-left: 3px solid red;
+    padding-left: 15px;
+}
+
+footer > section > nav{
+    width: 300px;
+    padding-left: 10px;
+    border-left: 2px solid white;
+    margin: 15px 0px;
+}
+
+footer > section > nav > ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+footer > section > nav > ul > a{
+    text-decoration: none;
+    width: 180px;
+    padding: 10px;
+    margin: 5px 0px;
+    color: white;
+    background-color: red;
+    transition: all 0.3s ease-in-out;
+}
+
+footer > section > nav > ul > a:hover{
+    background-color: rgb(192, 39, 39);
+}
+
+footer > section > nav > ul > a > li{
+    font-size: var(--texto);
+}
